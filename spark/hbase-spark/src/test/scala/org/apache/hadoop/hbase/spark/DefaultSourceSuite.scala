@@ -18,7 +18,6 @@
 package org.apache.hadoop.hbase.spark
 
 import java.sql.{Date, Timestamp}
-
 import org.apache.avro.Schema
 import org.apache.avro.generic.GenericData
 import org.apache.hadoop.hbase.client.{ConnectionFactory, Put}
@@ -28,7 +27,8 @@ import org.apache.hadoop.hbase.{HBaseTestingUtility, TableName}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{DataFrame, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}
 import org.xml.sax.SAXParseException
 
 case class HBaseRecord(
@@ -84,7 +84,7 @@ object AvroHBaseKeyRecord {
   }
 }
 
-class DefaultSourceSuite extends FunSuite with
+class DefaultSourceSuite extends AnyFunSuite with
 BeforeAndAfterEach with BeforeAndAfterAll with Logging {
   @transient var sc: SparkContext = null
   var TEST_UTIL: HBaseTestingUtility = new HBaseTestingUtility

@@ -18,16 +18,17 @@ package org.apache.hadoop.hbase.spark
 
 import org.apache.hadoop.hbase.client._
 import org.apache.hadoop.hbase.util.Bytes
-import org.apache.hadoop.hbase.{CellUtil, TableName, HBaseTestingUtility}
+import org.apache.hadoop.hbase.{CellUtil, HBaseTestingUtility, TableName}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.{Milliseconds, StreamingContext}
 import org.apache.spark.SparkContext
 import org.apache.hadoop.hbase.spark.HBaseDStreamFunctions._
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}
 
 import scala.collection.mutable
 
-class HBaseDStreamFunctionsSuite  extends FunSuite with
+class HBaseDStreamFunctionsSuite  extends AnyFunSuite with
 BeforeAndAfterEach with BeforeAndAfterAll with Logging {
   @transient var sc: SparkContext = null
 

@@ -26,9 +26,10 @@ import org.apache.hadoop.hbase.util.Bytes
 import org.apache.hadoop.hbase.spark.HBaseRDDFunctions._
 import org.apache.spark.SparkContext
 import org.junit.rules.TemporaryFolder
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}
+import org.scalatest.funsuite.AnyFunSuite
 
-class BulkLoadSuite extends FunSuite with
+class BulkLoadSuite extends AnyFunSuite with
 BeforeAndAfterEach with BeforeAndAfterAll  with Logging {
   @transient var sc: SparkContext = null
   var TEST_UTIL = new HBaseTestingUtility

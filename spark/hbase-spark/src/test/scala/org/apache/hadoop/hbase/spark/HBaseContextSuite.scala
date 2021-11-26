@@ -19,11 +19,12 @@ package org.apache.hadoop.hbase.spark
 import org.apache.hadoop.hbase.client._
 import org.apache.hadoop.hbase.filter.FirstKeyOnlyFilter
 import org.apache.hadoop.hbase.util.Bytes
-import org.apache.hadoop.hbase.{ CellUtil, TableName, HBaseTestingUtility}
-import org.apache.spark.{SparkException, SparkContext}
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
+import org.apache.hadoop.hbase.{CellUtil, HBaseTestingUtility, TableName}
+import org.apache.spark.{SparkContext, SparkException}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}
 
-class HBaseContextSuite extends FunSuite with
+class HBaseContextSuite extends AnyFunSuite with
 BeforeAndAfterEach with BeforeAndAfterAll  with Logging {
 
   @transient var sc: SparkContext = null

@@ -19,12 +19,10 @@ package org.apache.hadoop.hbase.spark
 
 import java.util.concurrent.ExecutorService
 import scala.util.Random
-
-import org.apache.hadoop.hbase.client.{BufferedMutator, Table, RegionLocator,
-  Connection, BufferedMutatorParams, Admin, TableBuilder}
+import org.apache.hadoop.hbase.client.{Admin, BufferedMutator, BufferedMutatorParams, Connection, RegionLocator, Table, TableBuilder}
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hbase.TableName
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
 case class HBaseConnectionKeyMocker (confId: Int) extends HBaseConnectionKey (null) {
   override def hashCode: Int = {
@@ -64,7 +62,7 @@ class ConnectionMocker extends Connection {
   /* override */ def clearRegionLocationCache(): Unit = {}
 }
 
-class HBaseConnectionCacheSuite extends FunSuite with Logging {
+class HBaseConnectionCacheSuite extends AnyFunSuite with Logging {
   /*
    * These tests must be performed sequentially as they operate with an
    * unique running thread and resource.

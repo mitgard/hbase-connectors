@@ -18,14 +18,15 @@ package org.apache.hadoop.hbase.spark
 
 import org.apache.hadoop.hbase.client._
 import org.apache.hadoop.hbase.util.Bytes
-import org.apache.hadoop.hbase.{CellUtil, TableName, HBaseTestingUtility}
+import org.apache.hadoop.hbase.{CellUtil, HBaseTestingUtility, TableName}
 import org.apache.hadoop.hbase.spark.HBaseRDDFunctions._
 import org.apache.spark.SparkContext
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}
 
 import scala.collection.mutable
 
-class HBaseRDDFunctionsSuite extends FunSuite with
+class HBaseRDDFunctionsSuite extends AnyFunSuite with
 BeforeAndAfterEach with BeforeAndAfterAll with Logging {
   @transient var sc: SparkContext = null
   var TEST_UTIL: HBaseTestingUtility = new HBaseTestingUtility

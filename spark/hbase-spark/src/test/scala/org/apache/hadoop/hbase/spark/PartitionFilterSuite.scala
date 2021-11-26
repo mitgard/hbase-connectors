@@ -21,7 +21,8 @@ import org.apache.hadoop.hbase.spark.datasources.{HBaseSparkConf, HBaseTableCata
 import org.apache.hadoop.hbase.{HBaseTestingUtility, TableName}
 import org.apache.spark.sql.{DataFrame, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}
 
 case class FilterRangeRecord(
                               intCol0: Int,
@@ -48,7 +49,7 @@ object FilterRangeRecord {
   }
 }
 
-class PartitionFilterSuite extends FunSuite with
+class PartitionFilterSuite extends AnyFunSuite with
   BeforeAndAfterEach with BeforeAndAfterAll with Logging {
   @transient var sc: SparkContext = null
   var TEST_UTIL: HBaseTestingUtility = new HBaseTestingUtility

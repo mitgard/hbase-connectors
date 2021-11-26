@@ -18,8 +18,7 @@ limitations under the License.
 
 # HBase Changelog
 
-## Release connector-1.0.0 - Unreleased (as of 2019-04-26)
-
+## Release connector-1.0.2 - Unreleased (as of 2019-04-26) with Spark 2.4.5 and Scala 2.12.12
 
 
 ### NEW FEATURES:

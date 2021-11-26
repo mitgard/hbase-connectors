@@ -20,14 +20,14 @@ package org.apache.hadoop.hbase.spark
 
 import java.text.SimpleDateFormat
 import java.util.{Date, Locale}
-
 import org.apache.hadoop.hbase.mapreduce.TableOutputFormat
 import org.apache.hadoop.hbase.{HBaseTestingUtility, TableName, TableNotFoundException}
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.hadoop.mapreduce.{Job, TaskAttemptID, TaskType}
 import org.apache.hadoop.mapreduce.task.TaskAttemptContextImpl
 import org.apache.spark.{SparkConf, SparkContext}
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}
 
 import scala.util.{Failure, Success, Try}
 
@@ -37,7 +37,7 @@ import scala.util.{Failure, Success, Try}
 // configuration object inside checkOutputSpecs came from jobContext.
 // The other one(getConf return conf object) we manually call "setConf" to init TableOutputFormat.conf, for making it more straight forward, we specify a nonexistent table
 // name in conf object, checkOutputSpecs will then throw TableNotFoundException exception
-class TableOutputFormatSuite extends FunSuite with
+class TableOutputFormatSuite extends AnyFunSuite with
   BeforeAndAfterEach with BeforeAndAfterAll with Logging{
   @transient var sc: SparkContext = null
   var TEST_UTIL = new HBaseTestingUtility
